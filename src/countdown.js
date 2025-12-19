@@ -13,6 +13,23 @@
  */
 function countdownTimer(startTime, interval) {
   // Initialize the remaining time
+  let timeLeft = startTime;
+ console.log(timeLeft); // log startTime
+
+ const timerId = setInterval(() => {
+  timeLeft--;
+
+  if(timeLeft <= 0) {
+    clearInterval(timerId);
+
+  } else {
+    console.log(timeLeft);
+
+  }
+
+ }, interval); // to convert seconds to miliseconds
+
+ return timerId;
   // Set up a timer using setInterval
   // Log the remaining time and decrement it
   // Stop the timer when time reaches 0
